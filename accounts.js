@@ -6,7 +6,7 @@ function checkBalance(userName) {
 
 	if (balance === undefined) {
 		console.log("Unknown user");
-		return undefined;
+		return "Unknown user";
 	}
 
 	return balance;
@@ -29,18 +29,20 @@ console.assert(
 	"You effed up, didn't get Barry's amount"
 );
 
-console.log("Get steve's balance");
-db = { Barry: 30, Steve: 0 };
-console.assert(checkBalance("Steve") == 0, "You effed up");
+// console.log("Get steve's balance");
+// db = { Barry: 30, Steve: 0 };
+// console.assert(checkBalance("Steve") == 0, "You effed up");
 
-console.log("Try and get Alice's balance, but she has not account");
-db = { Barry: 30, Steve: 0 };
-console.assert(checkBalance("Alice") == undefined, "You effed up");
+// console.log("Try and get Alice's balance, but she has not account");
+// db = { Barry: 30, Steve: 0 };
+// console.assert(checkBalance("Alice") == undefined, "You effed up");
 
-console.log("try and update Steves account by 10");
-db = { Barry: 30, Steve: 0 };
-console.assert(makeDeposit("Steve", 10) === 10, "deposit failed");
+// console.log("try and update Steves account by 10");
+// db = { Barry: 30, Steve: 0 };
+// console.assert(makeDeposit("Steve", 10) === 10, "deposit failed");
 
-console.log("try and update Barrys account by -30");
-db = { Barry: 30, Steve: 0 };
-console.assert(makeWithdrawal("Barry", 30) === 0, "withdrawal failed");
+// console.log("try and update Barrys account by -30");
+// db = { Barry: 30, Steve: 0 };
+// console.assert(makeWithdrawal("Barry", 30) === 0, "withdrawal failed");
+
+module.exports = { checkBalance, makeDeposit, makeWithdrawal };
